@@ -4,7 +4,7 @@ package com.example.demo1.learn;
  * Created by zhouli on 18/5/1.
  * 测试static关键字
  */
-public class TestStatic {
+public class StaticTest {
     public static void main(String[] args) {
         System.out.println(Static.name);
 

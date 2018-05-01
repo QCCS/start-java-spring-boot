@@ -21,16 +21,17 @@ public class Static {
     int age = 0;
 
     //构造方法
-    public Static(String sex,int age){
+    public Static(String sex, int age) {
         this.sex = sex;
         this.age = age;
     }
-    public static void showName(){
+
+    public static void showName() {
         //2.静态方法不能访问非静态成员
         //System.out.println(this.name);
     }
 
-    public void showNation(){
+    public void showNation() {
         System.out.println(this.nation);
     }
 
