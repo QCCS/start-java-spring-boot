@@ -27,6 +27,7 @@ public class Static {
     }
 
     public static void showName() {
+        System.out.println("静态方法");
         //2.静态方法不能访问非静态成员
         //System.out.println(this.name);
     }
