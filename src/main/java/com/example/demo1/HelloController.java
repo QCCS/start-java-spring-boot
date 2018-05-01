@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping(value = "/api",method = RequestMethod.GET)
     public String any(){
-        return "he1llo";
+        return "test first api";
     }
 }
