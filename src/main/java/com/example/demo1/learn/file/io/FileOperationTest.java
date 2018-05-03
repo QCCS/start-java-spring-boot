@@ -35,12 +35,12 @@ public class FileOperationTest {
 
         //文件操作
         String filePath = path + "/test/test1/test1.md";
-        String content = "这是文件内容1\n";
+        String content0 = "这是文件内容1\n";
         String content2 = "这是文件内容2\n";
         String content3 = "这是文件内容3\n";
         //创建文件
         fileOperation.createFile(filePath);
-        fileOperation.writeFile(filePath, content);
+        fileOperation.writeFile(filePath, content0);
         fileOperation.writeFile(filePath, content2);
         fileOperation.writeFileByFileWriter(filePath, content3);
         String fileContent = fileOperation.readFile(filePath);
