@@ -17,7 +17,11 @@ public class SoftwareTest {
     //传入软件类，显示软件名称
     //传入什么软件就显示什么软件名称
     public static void showSoftWareName(SoftWare softWare)  {
+        //可以这样
+        softWare.showName();
+        //也可以这样
         // 类型判断
+        /*
         if (softWare instanceof SoftWareExcel)  {
             SoftWare Excel = (SoftWareExcel) softWare;
             Excel.showName();
@@ -30,5 +34,6 @@ public class SoftwareTest {
         }else {
             System.out.println("不知道什么软件");
         }
+        */
     }
 }
