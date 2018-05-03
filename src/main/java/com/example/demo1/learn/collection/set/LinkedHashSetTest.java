@@ -24,4 +24,5 @@ public class LinkedHashSetTest {
         linkedHashSet.add("d");
         System.out.println(linkedHashSet);
     }
+    //迭代器与hashSet差不多，不写了
 }

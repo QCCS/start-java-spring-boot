@@ -11,8 +11,7 @@ import java.util.Set;
  * wechat qianchaoshushui
  */
 public class LinkedHashMapTest {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<String, String>(16, 0.75f, true);
         linkedHashMap.put("111", "111");
         linkedHashMap.put("222", "222");
@@ -25,8 +24,7 @@ public class LinkedHashMapTest {
         loopLinkedHashMap(linkedHashMap);
     }
 
-    public static void loopLinkedHashMap(LinkedHashMap<String, String> linkedHashMap)
-    {
+    public static void loopLinkedHashMap(LinkedHashMap<String, String> linkedHashMap) {
         Set<Map.Entry<String, String>> set = linkedHashMap.entrySet();
         Iterator<Map.Entry<String, String>> iterator = set.iterator();
         while (iterator.hasNext()) {
@@ -34,4 +32,5 @@ public class LinkedHashMapTest {
         }
         System.out.println();
     }
+    //迭代器与hashMap差不多，不写了
 }
