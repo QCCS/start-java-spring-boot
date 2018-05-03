@@ -13,6 +13,11 @@ public class LinkedListTest {
 
         //实例
         LinkedList<Integer> linkedList = new LinkedList<>();
+        //一样
+        //LinkedList<Integer> linkedList4 = new LinkedList<Integer>();
+        //LinkedList linkedList2 = new LinkedList();
+        //LinkedList linkedList1 = new LinkedList<>();
+        //LinkedList linkedList3 = new LinkedList<Integer>();
 
         /************************** 基本操作 ************************/
         linkedList.addFirst(0);    // 添加元素到列表开头
