@@ -43,7 +43,6 @@ import java.util.*;
 
 /**
  * @desc TreeMap测试程序
- * @author skywang
  */
 public class TreeMapTest  {
     public static void main(String[] args) {
