@@ -19,7 +19,7 @@ import java.util.HashSet;
  */
 
 /*
- * @desc HashSet常用API的使用。
+ * HashSet常用API的使用。
  */
 public class HashSetTest {
     public static void main(String[] args) {
@@ -52,11 +52,11 @@ public class HashSetTest {
         set.add("e");
 
         // 打印HashSet的实际大小
-        System.out.printf("size : %d\n", set.size());
+        System.out.println("size : "+ set.size());
 
         // 判断HashSet是否包含某个值
-        System.out.printf("HashSet contains a :%s\n", set.contains("a"));
-        System.out.printf("HashSet contains g :%s\n", set.contains("g"));
+        System.out.println("HashSet 是否包含 a :"+ set.contains("a"));
+        System.out.println("HashSet 是否包含 g :"+ set.contains("g"));
 
         // 删除HashSet中的“e”
         set.remove("e");
@@ -64,7 +64,7 @@ public class HashSetTest {
         // 将Set转换为数组
         String[] arr = (String[]) set.toArray(new String[0]);
         for (String str : arr){
-            System.out.printf("for each : %s\n", str);
+            System.out.println("for each : "+ str);
         }
 
         // 新建一个包含b、c、f的HashSet
@@ -78,24 +78,24 @@ public class HashSetTest {
         // 删除“removeset中，属于otherSet的元素”
         removeset.removeAll(otherset);
         // 打印removeset
-        System.out.printf("removeset : %s\n", removeset);
+        System.out.println("removeset : "+ removeset);
 
         // 克隆一个retainset，内容和set一模一样
         HashSet retainset = (HashSet) set.clone();
         // 保留“retainset中，属于otherSet的元素”
         retainset.retainAll(otherset);
         // 打印retainset
-        System.out.printf("retainset : %s\n", retainset);
+        System.out.println("retainset : "+ retainset);
 
         // 遍历HashSet
         for (Iterator iterator = set.iterator(); iterator.hasNext(); ){
-            System.out.printf("iterator : %s\n", iterator.next());
+            System.out.println("iterator : "+ iterator.next());
         }
         // 清空HashSet
         set.clear();
 
         // 输出HashSet是否为空
-        System.out.printf("%s\n", set.isEmpty() ? "set is empty" : "set is not empty");
+        System.out.println( set.isEmpty() ? "set is empty" : "set is not empty");
     }
 
     /*
@@ -103,7 +103,7 @@ public class HashSetTest {
      */
     private static void iteratorHashSet(HashSet set) {
         for (Iterator iterator = set.iterator(); iterator.hasNext(); ) {
-            System.out.printf("iterator : %s\n", iterator.next());
+            System.out.println("iterator : "+ iterator.next());
         }
     }
 
@@ -113,7 +113,7 @@ public class HashSetTest {
     private static void foreachHashSet(HashSet set) {
         String[] arr = (String[]) set.toArray(new String[0]);
         for (String str : arr){
-            System.out.printf("for each : %s\n", str);
+            System.out.println("for each : "+ str);
         }
 
     }
