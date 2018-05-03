@@ -4,3 +4,5 @@
  
  线程安全
  synchronized
+ 
+ 线程结束应该杀掉
