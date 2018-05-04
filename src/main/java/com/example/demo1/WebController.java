@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by zhouli on 18/5/4.
+ * Created by zhouli on 18/5/4
+ * Email 2565510046@qq.com
+ * wechat qianchaoshushui
  */
 @Controller
 public class WebController {

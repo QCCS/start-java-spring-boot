@@ -11,6 +11,7 @@ import com.example.demo1.database.model.User2;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+//先定义用户的curd接口
 public interface User2Service {
     User2 findByNameAndPasswordAndId(String name, String password, Integer id);
 

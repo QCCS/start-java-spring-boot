@@ -13,7 +13,9 @@ import com.example.demo1.database.model.User2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class User2ServiceImpl implements User2Service {
@@ -56,3 +58,33 @@ public class User2ServiceImpl implements User2Service {
         return user2JpaDao.findAll(pageable);
     }
 }
+/*
+//这一层也可以用
+// private JdbcTemplate jdbcTemplate;
+@Service
+public class User2ServiceImpl implements User2Service {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @Override
+    public void create(String name, Integer age) {
+        jdbcTemplate.update("insert into USER(NAME, AGE) values(?, ?)", name, age);
+    }
+
+    @Override
+    public void deleteByName(String name) {
+        jdbcTemplate.update("delete from USER where NAME = ?", name);
+    }
+
+    @Override
+    public Integer getAllUsers() {
+        return jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
+    }
+
+    @Override
+    public void deleteAllUsers() {
+        jdbcTemplate.update("delete from USER");
+    }
+}
+*/
