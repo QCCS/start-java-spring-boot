@@ -15,14 +15,14 @@ import java.util.concurrent.Executors;
  */
 public class ThreadPoolDemo {
 	public static void main(String[] args) {
-		// 创建实现了Runnable接口的对象
+		// 创建实现了Runnable接口的对象：线程
 		MyRunnable my = new MyRunnable();
 
 		// 创建线程池对象
 		// public static ExecutorService newFixedThreadPool(int nThreads)
 		ExecutorService pool = Executors.newFixedThreadPool(5);
 
-		// 提交代码
+		// 提交代码：把线程提交在线程池
 		// Future<?> submit(Runnable task)
 		pool.submit(my);
 		pool.submit(my);

@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
  */
 public class ThreadPoolDemo {
 	public static void main(String[] args) {
-		// 创建实现了Runnable接口的对象
+		// 创建实现了Callable接口的对象
 		MyCallable my = new MyCallable();
 
 		// 创建线程池对象
