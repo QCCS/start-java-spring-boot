@@ -5,14 +5,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MovieTicket implements Runnable {
 
-    private int tickets = 100;
+    private int tickets = 10;
     private Object obj = new Object();
 
     // 造锁
     // private ReentrantLock lock = new ReentrantLock();
+    //ReentrantLock是Lock的实现类
     private Lock lock = new ReentrantLock();
 
-/*
+    /*
     @Override
     public void run() {
         while (true) {
@@ -30,14 +31,13 @@ public class MovieTicket implements Runnable {
             }
         }
     }
-*/
+    */
     @Override
     public void run() {
         while (true) {
             try {
                 // 加锁
                 lock.lock();
-
                 if (tickets > 0) {
                     try {
                         Thread.sleep(100);

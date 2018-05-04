@@ -22,18 +22,20 @@ public class TimerTest {
     // 第一种方法：设定指定任务task在指定时间time执行 schedule(TimerTask task, Date time)
     public static void timer1() {
         Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            public void run() {
-                System.out.println("-------设定要指定任务1--------");
-            }
-        }, 2000);// 设定指定的时间time,此处为2000毫秒
+        timer.schedule(timerTask1(), 2000);// 设定指定的时间time,此处为2000毫秒
         timer.schedule(new TimerTask() {
             public void run() {
                 System.out.println("-------设定要指定任务2--------");
             }
         }, 4000);// 设定指定的时间time,此处为2000毫秒
     }
-
+    public static TimerTask timerTask1(){
+        return (new TimerTask() {
+            public void run() {
+                System.out.println("-------设定要指定任务1--------");
+            }
+        });
+    }
     // 第二种方法：设定指定任务task在指定延迟delay后进行固定延迟peroid的执行
     // schedule(TimerTask task, long delay, long period)
     public static void timer2() {
