@@ -1,4 +1,4 @@
-#数据库配置
+#数据库配置jdbc
 创建数据库 test_spring_boot
 
 添加用户表user
@@ -15,7 +15,6 @@ spring.datasource.initial-size=5
 server.tomcat.uri-encoding=UTF-8
 
 ```
-
 添加依赖
 ```$xslt
 
@@ -77,3 +76,80 @@ public class DbController {
 }
 
 ```
+
+#数据库配置jpa
+```$xslt
+ <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-data-jpa</artifactId>
+ </dependency>
+```
+```$xslt
+#JPA Configuration:
+spring.jpa.database=MySQL
+spring.jpa.generate-ddl=true  
+spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+spring.jpa.hibernate.naming_strategy=org.hibernate.cfg.ImprovedNamingStrategy  
+#spring.jpa.database=org.hibernate.dialect.MySQL5InnoDBDialect
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MYSQL5Dialect
+```
+创建实体类，自动建表
+```$xslt
+
+@Entity
+@Table(name = "user2")
+public class User2 {
+    @Id
+    @GeneratedValue
+    private Integer id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "password")
+    private String password;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User2(String name, String password) {
+        this.password = password;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User2 [id=" + id + ", name=" + name + ", password=" + password + "]";
+    }
+
+    public User2() {
+
+    }
+}
+
+```
+
+###实体模型Model
+###数据查询层DAO
+###查询接口，数据处理Service
+###接口定义数据使用Controller

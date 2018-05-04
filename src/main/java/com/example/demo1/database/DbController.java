@@ -1,9 +1,6 @@
 package com.example.demo1.database;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -58,4 +55,5 @@ public class DbController {
         }
         return map;
     }
+
 }
