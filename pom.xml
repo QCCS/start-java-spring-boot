@@ -51,6 +51,13 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<!--此依赖包含spring-boot-starter-jdb，可以删除上面依赖-->
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
