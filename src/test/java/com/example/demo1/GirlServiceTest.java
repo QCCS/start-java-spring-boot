@@ -42,7 +42,7 @@ public class GirlServiceTest {
     @Rollback
     public void testUserMapper() throws Exception {
         // insert一条数据，并select出来验证
-        userMapper.insert("AAA", 20);
+        userMapper.insert("AAA", 20,11);
         User u = userMapper.findByName("1");
         Assert.assertEquals(20, u.getAge().intValue());
         // update一条数据，并select出来验证
