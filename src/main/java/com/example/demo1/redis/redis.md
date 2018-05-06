@@ -8,6 +8,8 @@ $ make
 -----
 启动
 $ src/redis-server
+
+最好配置环境变量
 ------
 链接
 $ src/redis-cli
