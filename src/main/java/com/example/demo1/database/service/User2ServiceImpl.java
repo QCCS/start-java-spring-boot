@@ -8,12 +8,11 @@ package com.example.demo1.database.service;
 
 import java.util.List;
 
-import com.example.demo1.database.dao.User2JpaDao;
-import com.example.demo1.database.model.User2;
+import com.example.demo1.domain.s.User2;
+import com.example.demo1.domain.s.User2JpaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 

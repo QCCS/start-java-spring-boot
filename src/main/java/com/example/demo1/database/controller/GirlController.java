@@ -1,7 +1,7 @@
 package com.example.demo1.database.controller;
 
-import com.example.demo1.database.dao.GirlJpaDao;
-import com.example.demo1.database.model.Girl;
+import com.example.demo1.domain.s.GirlJpaDao;
+import com.example.demo1.domain.s.Girl;
 import com.example.demo1.database.model.Result;
 import com.example.demo1.database.service.GirlService;
 import com.example.demo1.utils.ResultUtil;

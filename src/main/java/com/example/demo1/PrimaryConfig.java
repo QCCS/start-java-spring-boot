@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
@@ -13,25 +14,26 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Map;
-
 /**
  * Created by zhouli on 18/5/4
  * Email 2565510046@qq.com
  * wechat qianchaoshushui
+ * 多数据库配置jpa
  */
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "entityManagerFactoryPrimary",
-        transactionManagerRef = "transactionManagerPrimary",
-        basePackages = {"com.example.demo1.domain.p"})
-public class PrimaryConfig1 {
+        entityManagerFactoryRef="entityManagerFactoryPrimary",
+        transactionManagerRef="transactionManagerPrimary",
+        basePackages= { "com.example.demo1.domain.p" }) //设置Repository所在位置
+//参考PrimaryConfig1的正常写法
+//这里是sping-boot1.*的写法
+public class PrimaryConfig {
 
-    @Resource
+    @Autowired
     @Qualifier("primaryDataSource")
     private DataSource primaryDataSource;
 
@@ -41,26 +43,28 @@ public class PrimaryConfig1 {
         return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
     }
 
-    @Resource
-    private JpaProperties jpaProperties;
+    @Primary
+    @Bean(name = "entityManagerFactoryPrimary")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
+        return builder
+                .dataSource(primaryDataSource)
+                .properties(getVendorProperties(primaryDataSource))
+                .packages("com.example.demo1.domain.p") //设置实体类所在位置
+                .persistenceUnit("primaryPersistenceUnit")
+                .build();
+    }
 
-    private Map<String, Object> getVendorProperties() {
+    @Autowired
+    private JpaProperties jpaProperties;
+//    这个是sping-boot1.*版本
+//    private Map<String, String> getVendorProperties(DataSource dataSource) {
+//        return jpaProperties.getHibernateProperties(dataSource);
+//    }
+//这是sping-boot2.*的写法
+    private Map<String, Object> getVendorProperties(DataSource dataSource) {
         return jpaProperties.getHibernateProperties(new HibernateSettings());
     }
 
-    /**
-     * 设置实体类所在位置
-     */
-    @Primary
-    @Bean(name = "entityManagerFactoryPrimary")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
-        return builder
-                .dataSource(primaryDataSource)
-                .packages("com.example.demo1.domain.p")
-                .persistenceUnit("primaryPersistenceUnit")
-                .properties(getVendorProperties())
-                .build();
-    }
 
     @Primary
     @Bean(name = "transactionManagerPrimary")

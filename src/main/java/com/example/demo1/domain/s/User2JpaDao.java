@@ -1,4 +1,4 @@
-package com.example.demo1.database.dao;
+package com.example.demo1.domain.s;
 
 /**
  * Created by zhouli on 18/5/4
@@ -8,7 +8,7 @@ package com.example.demo1.database.dao;
 
 import java.util.List;
 
-import com.example.demo1.database.model.User2;
+import com.example.demo1.domain.s.User2;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

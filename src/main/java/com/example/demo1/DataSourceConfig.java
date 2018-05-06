@@ -14,6 +14,7 @@ import javax.sql.DataSource;
  * Created by zhouli on 18/5/4
  * Email 2565510046@qq.com
  * wechat qianchaoshushui
+ * 多数据源配置
  */
 @Configuration
 public class DataSourceConfig {

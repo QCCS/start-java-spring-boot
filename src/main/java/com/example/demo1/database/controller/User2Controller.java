@@ -9,7 +9,7 @@ package com.example.demo1.database.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.demo1.database.model.User2;
+import com.example.demo1.domain.s.User2;
 import com.example.demo1.database.service.User2Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

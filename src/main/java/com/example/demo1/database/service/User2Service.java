@@ -7,7 +7,7 @@ package com.example.demo1.database.service;
 
 import java.util.List;
 
-import com.example.demo1.database.model.User2;
+import com.example.demo1.domain.s.User2;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

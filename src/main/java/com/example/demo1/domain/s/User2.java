@@ -1,4 +1,4 @@
-package com.example.demo1.database.model;
+package com.example.demo1.domain.s;
 
 /**
  * Created by zhouli on 18/5/4

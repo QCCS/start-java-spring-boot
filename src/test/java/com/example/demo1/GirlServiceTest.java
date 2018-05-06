@@ -1,6 +1,6 @@
 package com.example.demo1;
 
-import com.example.demo1.database.model.Girl;
+import com.example.demo1.domain.s.Girl;
 import com.example.demo1.database.service.GirlService;
 import org.junit.Assert;
 import org.junit.Test;

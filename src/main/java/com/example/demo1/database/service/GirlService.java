@@ -1,7 +1,7 @@
 package com.example.demo1.database.service;
 
-import com.example.demo1.database.dao.GirlJpaDao;
-import com.example.demo1.database.model.Girl;
+import com.example.demo1.domain.s.GirlJpaDao;
+import com.example.demo1.domain.s.Girl;
 import com.example.demo1.enums.ResultEnum;
 import com.example.demo1.exception.GirlException;
 import org.springframework.beans.factory.annotation.Autowired;

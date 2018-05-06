@@ -1,4 +1,4 @@
-package com.example.demo1.database.model;
+package com.example.demo1.domain.s;
 
 import org.hibernate.validator.constraints.NotBlank;
 
