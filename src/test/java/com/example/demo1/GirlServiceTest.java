@@ -18,7 +18,8 @@ public class GirlServiceTest {
 
     @Test
     public void findOneTest() {
-        Girl girl = girlService.findOne(73);
-        Assert.assertEquals(new Integer(13), girl.getAge());
+        //接口service：从数据库取出id是22的人，比较年纪
+        Girl girl = girlService.findOne(22);
+        Assert.assertEquals(new Integer(112), girl.getAge());
     }
 }
