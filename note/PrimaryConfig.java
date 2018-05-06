@@ -29,7 +29,7 @@ import java.util.Map;
         transactionManagerRef="transactionManagerPrimary",
         basePackages= { "com.example.demo1.domain.p" }) //设置Repository所在位置
 //参考PrimaryConfig1的正常写法
-//这里是1.*的写法
+//这里是sping-boot1.*的写法
 public class PrimaryConfig {
 
     @Autowired
@@ -55,11 +55,11 @@ public class PrimaryConfig {
 
     @Autowired
     private JpaProperties jpaProperties;
-//    这个是1.*版本
+//    这个是sping-boot1.*版本
 //    private Map<String, String> getVendorProperties(DataSource dataSource) {
 //        return jpaProperties.getHibernateProperties(dataSource);
 //    }
-//这是2.*的写法
+//这是sping-boot2.*的写法
     private Map<String, Object> getVendorProperties(DataSource dataSource) {
         return jpaProperties.getHibernateProperties(new HibernateSettings());
     }

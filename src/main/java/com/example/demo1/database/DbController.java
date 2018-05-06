@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/mydb")
 public class DbController {
-    @Autowired
+//    @Autowired
+//    private JdbcTemplate jdbcTemplate;
+
+    //由于有了多数据源。用下面的方式
+//    @Qualifier("primaryDataSource")
+//    private JdbcTemplate jdbcTemplate;
+
+    @Qualifier("secondaryJdbcTemplate")
     private JdbcTemplate jdbcTemplate;
+
     @RequestMapping("/getUsers")
     public List<Map<String, Object>> getDbType(){
         String sql = "select * from user";
