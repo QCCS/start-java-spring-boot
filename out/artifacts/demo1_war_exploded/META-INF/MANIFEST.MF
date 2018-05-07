@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: demo1
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: zhouli
+Implementation-Vendor-Id: com.example
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_40
+Main-Class: ${start-class}
+
