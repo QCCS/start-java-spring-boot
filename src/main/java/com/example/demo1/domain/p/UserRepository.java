@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Email 2565510046@qq.com
  * wechat qianchaoshushui
  */
-
-public interface UserRepository extends JpaRepository<User, Long> {
-
-
-}
+//@Entity一旦加了实体注释，结合jpa
+//public interface UserRepository extends JpaRepository<User, Long> {
+//spring就会把这个实体的成员对表的字段对应起来
+//public interface UserRepository extends JpaRepository<User, Long> {
+//
+//
+//}

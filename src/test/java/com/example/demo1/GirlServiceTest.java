@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+        import com.example.demo1.domain.p.Car;
         import com.example.demo1.domain.p.TestRediser;
         import com.example.demo1.domain.p.User;
         import com.example.demo1.domain.p.UserMapper;
@@ -15,6 +16,7 @@ package com.example.demo1;
         import org.springframework.test.annotation.Rollback;
         import org.springframework.test.context.junit4.SpringRunner;
 
+        import java.util.ArrayList;
         import java.util.HashMap;
         import java.util.List;
         import java.util.Map;
@@ -22,6 +24,7 @@ package com.example.demo1;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GirlServiceTest {
+    /*
 
     @Autowired
     private GirlService girlService;
@@ -33,7 +36,7 @@ public class GirlServiceTest {
         Girl girl = girlService.findOne(1);
         Assert.assertEquals(new Integer(112), girl.getAge());
     }
-
+*/
     //主要是测试MyBaits
     @Autowired
     private UserMapper userMapper;
@@ -41,8 +44,36 @@ public class GirlServiceTest {
     @Test
     @Rollback
     public void testUserMapper() throws Exception {
+        //user与address在不同的表
+        System.out.println("测试关联查询-user-address");
+        User u1 = userMapper.findUserWithAddress(1);
+        System.out.println("用户name -----" +u1.getName());
+        System.out.println("用户age -----" +u1.getAge());
+        System.out.println("用户address -----" +u1.getAddress().getCity());
+        System.out.println("用户address -----" +u1.getAddress().getProvince());
+        System.out.println("用户addressId -----" +u1.getAddressId());
+        System.out.println("用户card -----" +u1.getCars());
+        System.out.println("测试关联查询-user-car");
+        //user与cars在不同的表
+        User u2 = userMapper.getUserWithCar(1);
+        System.out.println("用户name -----" + u2.getName());
+        System.out.println("用户age -----" + u2.getAge());
+        System.out.println("用户address -----" + u2.getAddress());
+        System.out.println("用户addressId -----" + u2.getAddressId());
+        Car c1 = u2.getCars().get(0);
+        Car c2 = u2.getCars().get(1);
+        System.out.println("用户cars -----" + u2.getCars());
+        System.out.println("用户cars1 -----" +c1.getColor());
+        System.out.println("用户cars1 -----" +c1.getName());
+        System.out.println("用户cars1 -----" +c1.getId());
+        System.out.println("用户cars1 -----" +c1.getUserId());
+
+        System.out.println("用户cars2 -----" +c2.getColor());
+        System.out.println("用户cars2 -----" +c2.getName());
+        System.out.println("用户cars2 -----" +c2.getId());
+        System.out.println("用户cars2 -----" +c2.getUserId());
         // insert一条数据，并select出来验证
-        userMapper.insert("AAA", 20,12);
+//        userMapper.insert("AAA", 20,12);
         User u = userMapper.findByName("1");
         Assert.assertEquals(20, u.getAge().intValue());
         // update一条数据，并select出来验证
@@ -73,6 +104,8 @@ public class GirlServiceTest {
 
     }
 
+    /*
+
     //主要是测试redis
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -102,5 +135,5 @@ public class GirlServiceTest {
         Assert.assertEquals(40, redisTemplate.opsForValue().get("蜘蛛侠").getAge().longValue());
 
     }
-
+*/
 }
