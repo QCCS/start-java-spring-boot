@@ -12,9 +12,15 @@ import java.util.List;
  * wechat qianchaoshushui
  */
 //@Entity一旦加了实体注释，结合jpa
+//    在配置文件中配置：#自动重新创建表，只要有表就不创建，只是更新数据
+//            spring.jpa.hibernate.ddl-auto=update
 //public interface UserRepository extends JpaRepository<User, Long> {
 //spring就会把这个实体的成员对表的字段对应起来
     //当有关联表的时候，需要处理
+
+// 由于User关联多个表，这个实体对象的成员不能创建数据库中的表，所以就不需要加上Entity注解，并且不实现JpaRepository接口，
+// 不然会因为无法创建表报错
+    //如果要用自动创建表，就需要单独创建一个实体对象，把这个类当做视图类
 //@Entity
 public class User {
 
