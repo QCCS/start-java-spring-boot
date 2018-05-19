@@ -25,12 +25,12 @@ public class MailController {
             System.out.println("发送邮件测试");
             final MimeMessage mimeMessage = this.mailSender.createMimeMessage();
             final MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
-            message.setFrom("2565510046@qq.com");
+            message.setFrom("15921552946@163.com");
             String targetMail = id;
             System.out.println(targetMail);
             message.setTo(targetMail);
-            message.setSubject("spring boot发送邮件");
-            message.setText("你好");
+            message.setSubject("IT资源大放送");
+            message.setText("请加qq：2138420383,或者微信：qianchaochushui");
             this.mailSender.send(mimeMessage);
             return "sucesss";
         } catch (Exception ex) {
