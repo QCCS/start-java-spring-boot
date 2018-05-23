@@ -1,6 +1,6 @@
 #测试servlet
 
-创建servlet类之后，需要修改配置文件
+创建servlet类之后，需要修改配置文件，demo1.iml
 因为这个项目是spring-boot初始化的
 ```$xslt
 <configuration>
